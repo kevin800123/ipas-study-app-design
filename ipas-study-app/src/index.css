@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer base {
+  *, ::before, ::after { border-color: var(--color-gray-200, oklch(0.928 0.006 264.531)); }
+  html { color-scheme: light; }
+  body { background-color: #ffffff; color: #111827; }
+}

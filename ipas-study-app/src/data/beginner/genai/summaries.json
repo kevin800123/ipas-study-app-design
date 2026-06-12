@@ -1,0 +1,59 @@
+[
+  {
+    "id": "genai-ch1",
+    "subject": "genai",
+    "chapter": 1,
+    "title": "No Code / Low Code 概念",
+    "blocks": [
+      { "type": "text", "content": "No Code / Low Code 平台以視覺化、拖拉式介面建立應用程式，讓使用者用很少或不用撰寫程式碼即可開發，降低開發門檻、加速交付。" },
+      { "type": "keypoints", "items": [
+        "No Code：完全不需寫程式，面向業務人員（公民開發者）。",
+        "Low Code：仍可少量編碼以擴充彈性，面向開發者與業務協作。",
+        "核心要素「模型（Model）」用來抽象描述資料結構、業務流程與介面邏輯，影響應用的設計與維護。"
+      ]},
+      { "type": "table", "headers": ["優勢", "限制"], "rows": [
+        ["開發快速、快速試錯", "高度客製化或複雜邏輯受限"],
+        ["降低技術門檻", "可能被平台綁定（vendor lock-in）"],
+        ["減少維護成本", "效能、擴展性與整合彈性受平台約束"],
+        ["利於跨部門協作", "資安與治理需另行把關"]
+      ]}
+    ]
+  },
+  {
+    "id": "genai-ch2",
+    "subject": "genai",
+    "chapter": 2,
+    "title": "生成式 AI 應用領域與工具使用",
+    "blocks": [
+      { "type": "table", "headers": ["應用領域", "常見工具"], "rows": [
+        ["文本生成／對話", "ChatGPT、Claude、Copilot"],
+        ["圖像生成", "Midjourney、DALL·E、Stable Diffusion"],
+        ["程式碼生成", "GitHub Copilot、Cursor、VS Code 外掛"],
+        ["語音／聲音", "語音合成（TTS）、語音辨識（STT）工具"]
+      ]},
+      { "type": "text", "content": "善用生成式 AI 的關鍵在於「提示工程（Prompt Engineering）」與外部知識的結合。" },
+      { "type": "keypoints", "items": [
+        "提示語要素：清楚的指令、角色設定、提供範例（few-shot）、限定輸出格式。",
+        "思維鏈（Chain-of-Thought）：請模型逐步列出推理步驟，提升數學與邏輯題的準確性。",
+        "RAG（檢索增強生成）：先檢索外部知識再生成，降低幻覺、提供即時與專屬資料。",
+        "聯邦學習等隱私技術可在不集中敏感資料的前提下持續優化模型。"
+      ]}
+    ]
+  },
+  {
+    "id": "genai-ch3",
+    "subject": "genai",
+    "chapter": 3,
+    "title": "生成式 AI 導入評估與規劃",
+    "blocks": [
+      { "type": "text", "content": "企業導入生成式 AI 需要從評估、規劃到風險管理的完整流程，並對齊經濟部產業發展署《AI 導入指引》等參考資料。" },
+      { "type": "image", "caption": "生成式 AI 導入流程", "svg": "<svg viewBox='0 0 560 80' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='導入流程：評估、規劃、導入、風險管理'><g font-family='sans-serif' font-size='14' text-anchor='middle'><rect x='8' y='20' width='110' height='40' rx='6' fill='#eeedfe' stroke='#534ab7'/><text x='63' y='45' fill='#3c3489'>導入評估</text><rect x='150' y='20' width='110' height='40' rx='6' fill='#e6f1fb' stroke='#185fa5'/><text x='205' y='45' fill='#0c447c'>導入規劃</text><rect x='292' y='20' width='110' height='40' rx='6' fill='#e1f5ee' stroke='#0f6e56'/><text x='347' y='45' fill='#085041'>測試導入</text><rect x='434' y='20' width='110' height='40' rx='6' fill='#faece7' stroke='#993c1d'/><text x='489' y='45' fill='#712b13'>風險管理</text><g stroke='#888780' stroke-width='2' fill='#888780'><line x1='120' y1='40' x2='146' y2='40'/><polygon points='146,40 138,36 138,44'/><line x1='262' y1='40' x2='288' y2='40'/><polygon points='288,40 280,36 280,44'/><line x1='404' y1='40' x2='430' y2='40'/><polygon points='430,40 422,36 422,44'/></g></g></svg>" },
+      { "type": "keypoints", "items": [
+        "導入評估：技術／工具效能評估、解決方案選擇、成本效益分析、是否導入 AI 代理（Agent）。",
+        "導入規劃：目標設置、資源分配、導入策略、因應措施與測試驗證。",
+        "風險管理：生成式 AI 倫理風險、資料安全與隱私、合規性與智慧財產權。",
+        "隱私強化技術：同態加密、安全多方計算、零知識證明、聯邦學習。"
+      ]}
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "id": "ai-basics",
+  "level": "beginner",
+  "title": "人工智慧基礎概論",
+  "examFormat": { "questionCount": 50, "minutes": 75, "passScore": 70, "pointsPerQuestion": 2 },
+  "topics": []
+}

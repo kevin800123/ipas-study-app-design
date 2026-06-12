@@ -1,0 +1,7 @@
+{
+  "id": "genai",
+  "level": "beginner",
+  "title": "生成式 AI 應用與規劃",
+  "examFormat": { "questionCount": 50, "minutes": 75, "passScore": 70, "pointsPerQuestion": 2 },
+  "topics": []
+}
