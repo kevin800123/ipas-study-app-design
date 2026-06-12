@@ -2,6 +2,8 @@
 
 @layer base {
   *, ::before, ::after { border-color: var(--color-gray-200, oklch(0.928 0.006 264.531)); }
-  html { color-scheme: light; }
+  /* Enlarge everything proportionally: all Tailwind text/spacing is rem-based,
+     so bumping the root size zooms the whole UI for readability. */
+  html { color-scheme: light; font-size: 18px; }
   body { background-color: #ffffff; color: #111827; }
 }
