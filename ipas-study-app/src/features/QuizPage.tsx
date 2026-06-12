@@ -36,13 +36,18 @@ export function QuizPage() {
       date: new Date().toISOString().slice(0, 10),
       mode: quizMode, score: result.score, correct: result.correct, total: result.total,
     })
-    sessionStorage.setItem('lastResult', JSON.stringify({ subjectId, result }))
+    // store the rendered questions + answers so the result page can show a full
+    // review with explanations (option order may be shuffled in mock mode).
+    sessionStorage.setItem('lastResult', JSON.stringify({ subjectId, mode: quizMode, result, questions, answers }))
     navigate(`/subject/${subjectId}/result`)
   }
 
   return (
     <div className="space-y-6">
       <h1 className="text-lg font-medium">{subject.title}・{quizMode === 'mock' ? '模擬考' : '練習'}</h1>
+      {quizMode === 'practice' && (
+        <p className="text-xs text-gray-500">練習模式：作答後立即顯示正解與詳解。</p>
+      )}
       {questions.map((q, idx) => (
         <div key={q.id} className="border rounded-lg p-4 space-y-2">
           <div className="text-sm font-medium">{idx + 1}. {q.stem}</div>
@@ -60,7 +65,15 @@ export function QuizPage() {
               </button>
             )
           })}
-          {revealed[q.id] && q.explanation && <p className="text-xs text-gray-500">解析：{q.explanation}</p>}
+          {revealed[q.id] && (
+            <div className="rounded bg-gray-50 border border-gray-100 p-2 space-y-1">
+              <div className="text-xs font-medium text-green-700">正解：({q.answer})</div>
+              <p className="text-xs text-gray-600 leading-relaxed">
+                <span className="text-gray-400">詳解：</span>
+                {q.explanation || '詳解整理中，敬請期待。'}
+              </p>
+            </div>
+          )}
         </div>
       ))}
       <button onClick={submit} className="w-full bg-sky-600 text-white rounded py-2 text-sm">交卷計分</button>

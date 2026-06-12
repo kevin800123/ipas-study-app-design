@@ -1,0 +1,75 @@
+[
+  {
+    "id": "big-data-ch1",
+    "subject": "big-data",
+    "chapter": 1,
+    "title": "統計與機率基礎",
+    "blocks": [
+      { "type": "text", "content": "大數據分析以統計為基礎。需熟悉敘述統計、機率分佈與分佈形狀的判讀，這也是中級常見的計算與情境題型。" },
+      { "type": "keypoints", "items": [
+        "Z 分數（Z-Score）：表示數據點距平均值幾個標準差。Z=2 代表比平均值高 2 個標準差。",
+        "偏態（Skewness）：>0 右偏（長尾在右）、<0 左偏、=0 對稱。",
+        "CDF（累積分佈函數）：表示隨機變數小於等於某值的累積機率，單調遞增、範圍 0~1。"
+      ]},
+      { "type": "table", "headers": ["分佈", "適用情境"], "rows": [
+        ["卜瓦松（Poisson）", "固定區間內事件發生次數（事件獨立、平均率固定），如每分鐘來電數"],
+        ["常態（Normal）", "連續、對稱鐘形分佈，許多自然量測近似常態"],
+        ["指數（Exponential）", "事件之間的等待時間"],
+        ["均勻（Uniform）", "區間內每個結果機率相等"]
+      ]},
+      { "type": "keypoints", "items": [
+        "吉尼不純度（Gini Impurity）：衡量資料不純度；類別完全均衡時最大，純度越高值越小。"
+      ]}
+    ]
+  },
+  {
+    "id": "big-data-ch2",
+    "subject": "big-data",
+    "chapter": 2,
+    "title": "資料前處理與特徵工程",
+    "blocks": [
+      { "type": "table", "headers": ["縮放方法", "特性"], "rows": [
+        ["Min-Max 正規化", "縮放到 [0,1]，對極端值（離群值）敏感"],
+        ["Z-score 標準化", "轉為平均 0、標準差 1，仍受離群值影響"],
+        ["穩健縮放（Robust Scaling）", "以中位數與 IQR 縮放，對離群值最不敏感，適合含極端值資料"]
+      ]},
+      { "type": "keypoints", "items": [
+        "資料清理：處理缺失值（NaN）、重複值、離群值與格式不一致。",
+        "類別不平衡：隨機過採樣（Random Oversampling）會複製少數類樣本，易增加過擬合風險。",
+        "缺失值會使 Pandas 自動把整欄數值轉為 float64（如年份變成 2006.0）。"
+      ]}
+    ]
+  },
+  {
+    "id": "big-data-ch3",
+    "subject": "big-data",
+    "chapter": 3,
+    "title": "Python 資料分析（pandas / 視覺化）",
+    "blocks": [
+      { "type": "table", "headers": ["語法", "用途"], "rows": [
+        ["df['x'].describe()", "輸出平均、標準差、四分位等敘述統計"],
+        ["df.groupby('k')['v'].sum()", "依鍵分組後彙總（總和）"],
+        ["df['x'].astype('Int64')", "轉為可容納 NaN 的整數型態"],
+        ["sns.barplot(x, y, data)", "以長條圖呈現分組統計（seaborn）"]
+      ]},
+      { "type": "keypoints", "items": [
+        "pandas 用於資料載入、清理、轉換與彙總；NumPy 提供向量化數值運算。",
+        "視覺化：matplotlib／seaborn 製作長條圖、折線圖、分佈圖；選對圖型才能正確表達分析目的。"
+      ]}
+    ]
+  },
+  {
+    "id": "big-data-ch4",
+    "subject": "big-data",
+    "chapter": 4,
+    "title": "大數據平台、即時處理與隱私",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "即時監控大量物聯網／交易資料，宜採『大數據平台＋即時資料分析』組合。",
+        "異常偵測（Anomaly Detection）：即時找出與常態明顯不同的可疑樣本（如可疑交易）。",
+        "同態加密（Homomorphic Encryption）：可直接在加密狀態下進行運算，保護資料隱私。",
+        "去識別化、資料最小化、存取控制是常見隱私保護手段，並須符合個資法規。"
+      ]}
+    ]
+  }
+]

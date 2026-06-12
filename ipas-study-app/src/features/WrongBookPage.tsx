@@ -1,10 +1,10 @@
 import { useState, type ChangeEvent } from 'react'
-import { listSubjects, getQuestions } from '../data/subjects'
+import { allSubjects, getQuestions } from '../data/subjects'
 import { getSubjectProgress, removeWrongQuestion, exportProgress, importProgress } from '../store/progress'
 
 export function WrongBookPage() {
   const [, force] = useState(0)
-  const subjects = listSubjects('beginner')
+  const subjects = allSubjects()
 
   function doExport() {
     const blob = new Blob([exportProgress()], { type: 'application/json' })
@@ -36,11 +36,18 @@ export function WrongBookPage() {
         if (items.length === 0) return null
         return (
           <section key={s.id} className="space-y-2">
-            <div className="text-sm font-medium">{s.title}（{items.length}）</div>
+            <div className="text-sm font-medium">
+              <span className="text-xs text-gray-400 mr-1">{s.level === 'intermediate' ? '中級' : '初級'}</span>
+              {s.title}（{items.length}）
+            </div>
             {items.map((q) => (
               <div key={q.id} className="border rounded p-3 text-sm space-y-1">
                 <div>{q.stem}</div>
                 <div className="text-green-700 text-xs">正解：({q.answer}) {q.options.find((o) => o.key === q.answer)?.text}</div>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  <span className="text-gray-400">詳解：</span>
+                  {q.explanation || '詳解整理中，敬請期待。'}
+                </p>
                 <button onClick={() => { removeWrongQuestion(s.id, q.id); force((n) => n + 1) }}
                   className="text-xs text-gray-400">移除</button>
               </div>

@@ -1,0 +1,7 @@
+{
+  "id": "ml-tech",
+  "level": "intermediate",
+  "title": "機器學習技術與應用",
+  "examFormat": { "questionCount": 50, "minutes": 90, "passScore": 70, "pointsPerQuestion": 2 },
+  "topics": []
+}

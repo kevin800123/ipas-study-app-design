@@ -7,12 +7,14 @@ import { QuizPage } from './features/QuizPage'
 import { ResultPage } from './features/ResultPage'
 import { WrongBookPage } from './features/WrongBookPage'
 import { ExamInfoPage } from './features/ExamInfoPage'
+import { useViewMode } from './store/viewMode'
 
 export default function App() {
+  const web = useViewMode() === 'web'
   return (
-    <div className="min-h-screen md:flex">
+    <div className={web ? 'min-h-screen' : 'min-h-screen md:flex'} data-view={web ? 'web' : 'app'}>
       <NavBar />
-      <main className="flex-1 max-w-2xl mx-auto p-4 pb-20 md:pb-4">
+      <main className={`flex-1 mx-auto p-4 ${web ? 'max-w-5xl pb-10' : 'max-w-2xl pb-20 md:pb-4'}`}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/subject/:subjectId" element={<SubjectPage />} />

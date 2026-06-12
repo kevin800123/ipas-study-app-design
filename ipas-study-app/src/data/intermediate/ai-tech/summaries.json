@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ai-tech-ch1",
+    "subject": "ai-tech",
+    "chapter": 1,
+    "title": "自然語言處理（NLP）",
+    "blocks": [
+      { "type": "text", "content": "NLP 讓機器理解與生成人類語言。處理流程通常為：斷詞（Tokenization）→ 文字向量化 → 模型理解／生成。中級重點在各種詞表示法與語言模型的差異。" },
+      { "type": "keypoints", "items": [
+        "斷詞（Tokenization）：將連續文本切為詞彙單位，是後續處理的基礎。",
+        "TF-IDF：以詞頻×逆文件頻率衡量關鍵詞重要性；長文本中常見詞頻偏高，易使常見詞權重被過度放大。",
+        "N-gram 語言模型：僅依固定長度前序詞估計機率，難以捕捉長距離依賴，導致整體語意不連貫。",
+        "情感分析（Sentiment Analysis）：判斷文本所表達的情感傾向（正/負/中）。"
+      ]},
+      { "type": "table", "headers": ["詞向量方法", "核心特性"], "rows": [
+        ["Word2Vec", "基於預測（predictive）的模型，以上下文預測詞向量"],
+        ["GloVe", "基於全域共現統計（count-based）的模型"],
+        ["TF-IDF", "稀疏向量，反映詞在文件中的重要性，不含語意"],
+        ["BERT 嵌入", "依上下文動態產生（contextual），同詞不同義可區分"]
+      ]},
+      { "type": "keypoints", "items": [
+        "Transformer：以自注意力機制（Self-Attention）捕捉長距離語境依賴，是改善長文翻譯與理解的關鍵。",
+        "BERT 的 MLM（遮罩語言模型）：隨機遮罩部分詞，讓模型依雙向上下文預測被遮罩詞。",
+        "GPT 類為單向（由左至右）生成；BERT 為雙向理解。"
+      ]}
+    ]
+  },
+  {
+    "id": "ai-tech-ch2",
+    "subject": "ai-tech",
+    "chapter": 2,
+    "title": "電腦視覺（CV）",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "卷積神經網路（CNN）擅長影像特徵擷取，是影像辨識主流架構。",
+        "影像分類 → 物件偵測 → 語義分割 → 實例分割，任務的細緻度依序提高。",
+        "物件偵測輸出邊界框（Bounding Box）與類別。"
+      ]},
+      { "type": "table", "headers": ["指標", "意義"], "rows": [
+        ["IoU（交並比）", "預測框與真實框的重疊程度；閾值設越高代表要求定位越精準"],
+        ["mAP（平均精確率）", "綜合各類別 AP 的平均，衡量偵測整體表現"],
+        ["Precision / Recall", "精確率（預測為正確的比例）與召回率（實際為正被找出的比例）"]
+      ]},
+      { "type": "text", "content": "Softmax 將輸出轉為機率分佈（保留所有資訊、以比例表示）；Max-Pooling 只保留區域最大值以降維，兩者用途不同。" }
+    ]
+  },
+  {
+    "id": "ai-tech-ch3",
+    "subject": "ai-tech",
+    "chapter": 3,
+    "title": "生成式 AI 與多模態",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "生成式模型：GAN（生成器對抗判別器）、VAE、Diffusion（擴散去噪）、大型語言模型（LLM）。",
+        "多模態學習整合文字、影像、聲音等不同來源資料。",
+        "早期融合（Early Fusion）：在輸入或特徵擷取階段整合不同模態。",
+        "晚期融合（Late Fusion）：各模態分別建模，最後在決策層合併輸出。",
+        "Transformer 架構常用於整合多模態（如醫療影像＋臨床文本）。"
+      ]},
+      { "type": "text", "content": "RAG（檢索增強生成）結合外部知識檢索與生成，可降低幻覺、提供即時/專業知識；微調（Fine-tuning）則調整模型權重以適應特定任務。" }
+    ]
+  },
+  {
+    "id": "ai-tech-ch4",
+    "subject": "ai-tech",
+    "chapter": 4,
+    "title": "AI 規劃、部署與安全",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "AI 專案流程：問題定義 → 資料準備 → 模型選擇與訓練 → 評估 → 部署 → 監控（MLOps）。",
+        "供應鏈攻擊（Supply Chain Attack）：第三方開源模型或資料可能被植入惡意內容，威脅企業內部 AI 安全。",
+        "模型部署需考量延遲、吞吐量、可擴展性與監控（資料/概念漂移）。",
+        "資料準備與模型選擇須對齊業務目標與可用資料型態。"
+      ]}
+    ]
+  }
+]

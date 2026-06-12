@@ -1,0 +1,7 @@
+{
+  "id": "ai-tech",
+  "level": "intermediate",
+  "title": "人工智慧技術應用與規劃",
+  "examFormat": { "questionCount": 50, "minutes": 90, "passScore": 70, "pointsPerQuestion": 2 },
+  "topics": []
+}

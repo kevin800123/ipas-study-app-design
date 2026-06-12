@@ -1,0 +1,7 @@
+{
+  "id": "big-data",
+  "level": "intermediate",
+  "title": "大數據處理分析與應用",
+  "examFormat": { "questionCount": 50, "minutes": 90, "passScore": 70, "pointsPerQuestion": 2 },
+  "topics": []
+}

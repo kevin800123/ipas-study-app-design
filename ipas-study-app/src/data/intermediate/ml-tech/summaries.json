@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ml-tech-ch1",
+    "subject": "ml-tech",
+    "chapter": 1,
+    "title": "機器學習數學基礎",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "機率/統計：分佈、期望值、變異數、貝氏定理，是建模與評估的基礎。",
+        "線性代數：向量、矩陣運算、特徵值/特徵向量，支撐 PCA 降維與神經網路計算。",
+        "數值優化：以梯度下降（Gradient Descent）最小化損失函數。"
+      ]},
+      { "type": "text", "content": "非凸函數（Non-convex）存在多個局部極小值，梯度下降可能卡在局部最小或鞍點；可用動量、Adam、學習率調整或隨機初始化等方法改善。" }
+    ]
+  },
+  {
+    "id": "ml-tech-ch2",
+    "subject": "ml-tech",
+    "chapter": 2,
+    "title": "機器學習原理與演算法",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "過擬合（Overfitting）：訓練表現好但泛化差；可用正則化、增加資料、簡化模型、提早停止改善。",
+        "交叉驗證（Cross-Validation）：評估模型對未觀察資料的泛化能力；類別不平衡時用分層 K-Fold。"
+      ]},
+      { "type": "table", "headers": ["正則化", "效果"], "rows": [
+        ["L1（Lasso）", "產生稀疏模型，使部分權重收斂為 0，可做特徵選擇"],
+        ["L2（Ridge）", "壓縮權重但不為 0，緩解共線性、降低過擬合"]
+      ]},
+      { "type": "keypoints", "items": [
+        "常見演算法：線性/邏輯迴歸、決策樹、隨機森林、SVM、KNN、K-means、樸素貝氏。",
+        "集成學習：Bagging（如隨機森林，降低變異）、Boosting（如 XGBoost，降低偏差）。"
+      ]}
+    ]
+  },
+  {
+    "id": "ml-tech-ch3",
+    "subject": "ml-tech",
+    "chapter": 3,
+    "title": "深度學習原理與框架",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "神經網路由輸入層、隱藏層、輸出層組成，以反向傳播更新權重。",
+        "激活函數：ReLU 可緩解梯度消失；Sigmoid/tanh 易在深層飽和。",
+        "架構：CNN（影像）、RNN/LSTM（序列）、Transformer（注意力，序列與多模態）。",
+        "框架：TensorFlow、PyTorch；訓練常用 GPU/TPU 加速。"
+      ]}
+    ]
+  },
+  {
+    "id": "ml-tech-ch4",
+    "subject": "ml-tech",
+    "chapter": 4,
+    "title": "建模流程、評估與調優",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "流程：數據準備與特徵工程 → 模型選擇與架構設計 → 訓練/評估/驗證 → 調整與優化。",
+        "分類指標：準確率、精確率、召回率、F1、AUC；不平衡資料勿只看準確率。",
+        "迴歸指標：MSE、RMSE、MAE、R²。",
+        "超參數調整：網格搜尋、隨機搜尋、貝氏優化；以驗證集避免資料洩漏。"
+      ]}
+    ]
+  },
+  {
+    "id": "ml-tech-ch5",
+    "subject": "ml-tech",
+    "chapter": 5,
+    "title": "資料隱私、安全與公平性",
+    "blocks": [
+      { "type": "keypoints", "items": [
+        "隱私與合規：去識別化、差分隱私、聯邦學習；遵循個資法與相關規範。",
+        "演算法偏見：訓練資料偏差會導致不公平結果；需評估群體公平性並校正。",
+        "模型安全：對抗樣本、資料/模型投毒、供應鏈風險皆需防範。"
+      ]}
+    ]
+  }
+]

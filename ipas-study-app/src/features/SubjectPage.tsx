@@ -10,7 +10,7 @@ export function SubjectPage() {
   const read = new Set(getSubjectProgress(subjectId).summariesRead)
   return (
     <div className="space-y-4">
-      <Link to="/" className="text-sm text-gray-500">‹ 初級</Link>
+      <Link to="/" className="text-sm text-gray-500">‹ {subject.level === 'intermediate' ? '中級' : '初級'}</Link>
       <h1 className="text-lg font-medium">{subject.title}</h1>
       <section className="space-y-2">
         <div className="text-xs text-gray-500">圖文摘要</div>
